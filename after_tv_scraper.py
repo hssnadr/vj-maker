@@ -298,7 +298,7 @@ def _choisir(question: str, options: list[tuple[str, str]], defaut: int = 1) -> 
 def interactif(a: argparse.Namespace) -> int:
     """Mode guidé : quelques questions, puis le téléchargement. Pour qui double-clique sur le .exe."""
     print("=" * 62)
-    print(" SUPER VJ MAKER — téléchargeur des loops After TV")
+    print(" VJ MAKER — téléchargeur des loops After TV")
     print(f" Source : {a.site}")
     print("=" * 62)
     a.quality = _choisir("Quelle qualité ?", [

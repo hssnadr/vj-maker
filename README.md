@@ -1,4 +1,4 @@
-# 🎛️ Super VJ Maker
+# 🎛️ VJ Maker
 
 **Apprends le VJing avec 818 vraies loops, en appliquant les règles de montage d'un VJ en activité.**
 
@@ -112,7 +112,7 @@ Un exercice par niveau, chacun s'appuie sur une partie des règles :
 
 ### Option A — le `.exe` (Windows, rien à installer)
 
-1. Va sur la page [**Releases**](../../releases/latest) et télécharge **`super-vj-downloader.exe`**.
+1. Va sur la page [**Releases**](../../releases/latest) et télécharge **`vj-downloader.exe`**.
 2. Mets-le dans un dossier avec beaucoup de place libre (≈ 12 Go en meilleure qualité).
 3. **Double-clique** : l'outil te pose 3 questions (qualité, style, liste ou téléchargement) puis télécharge dans un dossier `downloads/` à côté du `.exe`.
 
@@ -121,17 +121,17 @@ Un exercice par niveau, chacun s'appuie sur une partie des règles :
 Le `.exe` accepte aussi les commandes de l'option C, depuis PowerShell :
 
 ```powershell
-.\super-vj-downloader.exe --dry-run
+.\vj-downloader.exe --dry-run
 ```
 ```powershell
-.\super-vj-downloader.exe -q both --mood house
+.\vj-downloader.exe -q both --mood house
 ```
 
 ### Option B — avec Python (3.8+, aucune dépendance)
 
 ```bash
-git clone https://github.com/<ton-compte>/super-vj-maker.git
-cd super-vj-maker
+git clone https://github.com/<ton-compte>/vj-maker.git
+cd vj-maker
 python after_tv_scraper.py
 ```
 
@@ -226,7 +226,7 @@ Le site charge un fichier `manifest.json` qui liste **toutes** les loops, puis l
 
 ```bash
 pip install pyinstaller
-pyinstaller --onefile --console --name super-vj-downloader after_tv_scraper.py
+pyinstaller --onefile --console --name vj-downloader after_tv_scraper.py
 ```
 
 Le fichier est créé dans `dist/`.
