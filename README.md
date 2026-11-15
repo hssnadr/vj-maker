@@ -1,15 +1,18 @@
-# Super VJ Maker
+# 🎛️ Super VJ Maker
 
-**Apprendre le VJing avec 818 vraies loops, en appliquant les règles de montage d'un VJ en activité.**
+**Apprends le VJing avec 818 vraies loops, en appliquant les règles de montage d'un VJ en activité.**
 
-Ce dépôt réunit deux choses :
+Tu veux apprendre à *monter des images sur de la musique en live* ? Ici, tu as :
 
-1. **Les sources** — un outil qui télécharge, en format natif (.mp4 d'origine, sans ré-encodage), toute la bibliothèque de loops du lecteur [After TV](https://odcstudio.fr/after-tv/) (un projet de [@vj_rien_](https://www.instagram.com/vj_rien_/) et [@enjoy.dot](https://www.instagram.com/enjoy.dot/)).
-2. **Les règles** — le rapport de ce qui pilote ces vidéos : les consignes de montage de VJ Rien (« Oscar »), dictées en langage naturel à un assistant de code, puis devenues l'algorithme d'After TV. On les lit, on les comprend, on les rejoue à la main dans son logiciel de VJ (Resolume, Modul8, VDMX, TouchDesigner, OBS…).
+1. **Les sources** — un outil qui télécharge toute la bibliothèque de loops du lecteur [After TV](https://odcstudio.fr/after-tv/) (un projet de [@vj_rien_](https://www.instagram.com/vj_rien_/) et [@enjoy.dot](https://www.instagram.com/enjoy.dot/)), en **format natif** : les `.mp4` d'origine, sans ré-encodage.
+2. **Les règles** — ce qui pilote ces vidéos : les consignes de montage de VJ Rien (« Oscar »), dictées *à l'oral* à une IA (le fameux **vibe coding**), puis devenues l'algorithme d'After TV. Tu les lis, tu les comprends, tu les rejoues **à la main** dans ton logiciel (Resolume, Modul8, VDMX, TouchDesigner, OBS…).
+3. **Le glossaire** — parce que ces règles parlent musique, VJing *et* programmation, il y a un [**guide du jargon**](docs/GLOSSAIRE.md) qui explique tout simplement.
 
-L'idée : au lieu de chercher des « astuces de VJ » partout, partir d'un **corpus réel** (818 loops, déjà classées : style, vitesse, thème, plans, tags) et d'un **jeu de règles testé en live** (un codex numéroté V1 à V88, avec les chiffres et les raisons de chaque règle), puis s'exercer.
+L'idée : au lieu de chercher des « astuces de VJ » partout, tu pars d'un **vrai corpus** (818 loops déjà classées par style, vitesse, thème, tags) et d'un **jeu de règles testé en live** (un carnet numéroté V1 → V88, avec le chiffre et la raison de chaque règle). Puis tu t'exerces.
 
-> Les vidéos **ne sont pas dans ce dépôt** (≈ 12 Go) : on les télécharge soi-même avec l'outil ci-dessous. Voir [Droits et usage](#droits-et-usage).
+> 📦 **Les vidéos ne sont pas dans ce dépôt** (≈ 12 Go) : tu les télécharges toi-même avec l'outil. Voir [Droits et usage](#droits-et-usage).
+
+**Plan** : [1. Les sources](#1-les-sources--818-loops) · [2. Le jargon express](#2-le-jargon-express) · [3. Les règles](#3-les-règles--ce-que-le-vj-simpose) · [4. C'est quoi le vibe coding ?](#4-cest-quoi-le-vibe-coding-et-comment-lire-une-consigne) · [5. Parcours d'apprentissage](#5-parcours-dapprentissage) · [6. Télécharger les vidéos](#6-mode-demploi--télécharger-les-vidéos) · [Droits](#droits-et-usage)
 
 ---
 
@@ -17,78 +20,122 @@ L'idée : au lieu de chercher des « astuces de VJ » partout, partir d'un **cor
 
 | | |
 |---|---|
-| Loops | 818 (484 en SD, 334 avec en plus une version HD) |
-| Poids | ≈ 12 Go en « meilleure qualité » (HD quand elle existe, sinon SD) |
+| Loops | 818 (484 en SD ; 334 avec en plus une version HD) |
+| Poids | ≈ 12 Go en « meilleure qualité » (HD quand elle existe, sinon SD) ; ≈ 9,5 Go en SD seule |
 | Format | `.mp4` natif, servi tel quel par le site |
-| Classement | style (house 62 · techno 327 · « les deux » 393), thème (films, humains, glitch, street, space, motion graphic 3d, pixel sorting…), vitesse (lent / moyen / rapide), rôle (drop, break, suspension, hyper), plans, tags visuels (`couleur:`, `forme:`, `sujet:`, `lumière:`…) |
+| Classement | **style** (house 62 · techno 327 · « les deux » 393 · non jugées 36), **thème** (films, humains, glitch, street, space, motion graphic 3d, pixel sorting…), **vitesse** (lent / moyen / rapide), **rôle** (drop, break, suspension, hyper), **plans**, **tags visuels** (`couleur:`, `forme:`, `sujet:`, `lumière:`…) |
 
-Le téléchargeur écrit aussi `downloads/catalogue.csv` (ouvrable dans Excel/LibreOffice) : une ligne par loop avec son nom, son mood, son thème, son rôle, sa durée, ses tags. C'est la **fiche de classement** dont les règles se servent.
+Le téléchargeur écrit aussi `downloads/catalogue.csv` (ouvrable dans Excel ou LibreOffice) : **une ligne par loop**, avec son nom, son mood, son thème, son rôle, sa durée et ses tags. C'est la **fiche de classement** dont se servent les règles. Garde-la ouverte quand tu t'exerces !
 
-## 2. Les règles : ce que le VJ s'impose
+## 2. Le jargon express
+
+Tu verras ces mots partout. Le [**glossaire complet**](docs/GLOSSAIRE.md) en explique une soixantaine, avec des exemples.
+
+| Mot | En deux mots |
+|---|---|
+| **Loop** | Une courte vidéo qui boucle. |
+| **BPM** | Le tempo : 126 BPM = 126 battements par minute. |
+| **Temps / mesure** | Un temps = un battement ; une mesure = 4 temps. |
+| **Kick** | La grosse caisse, le « boum » régulier. |
+| **Drop** | Le moment fort, quand tout revient en force. |
+| **Break** | La pause : le kick disparaît. |
+| **Couche / écran** | Une piste vidéo. On en empile jusqu'à 3. |
+| **Opacité / fusion** | La transparence d'une couche / la façon de la mélanger avec les autres (*Alpha* = recouvre, *Add* = les couleurs s'additionnent). |
+| **Vivier** | La liste des loops qui ont le droit de jouer à un moment donné. |
+| **Dominante** | La loop « personnage principal » d'une séquence. |
+| **Tag** | Une étiquette du type `couleur:désaturé`. |
+| **Codex (V68…)** | Le carnet de règles : un numéro = une décision. |
+
+> ⏱️ **Pense en mesures, pas en secondes.** À 126 BPM : 1 temps ≈ 0,5 s · 1 mesure ≈ 1,9 s · 8 mesures ≈ 15 s. (La calculette est dans le [glossaire](docs/GLOSSAIRE.md#9-calculette-bpm--secondes).)
+
+## 3. Les règles : ce que le VJ s'impose
 
 Elles sont détaillées, sourcées et datées dans :
 
-- 📘 [docs/RAPPORT-regles-montage.md](docs/RAPPORT-regles-montage.md) — **toutes les règles**, par thème, avec valeurs et citations ;
-- 🛠 [docs/RAPPORT-construction-player.md](docs/RAPPORT-construction-player.md) — comment ces règles sont devenues un player et un algorithme.
+- 📘 [**docs/RAPPORT-regles-montage.md**](docs/RAPPORT-regles-montage.md) — toutes les règles, par thème, avec les valeurs ;
+- 🛠 [**docs/RAPPORT-construction-player.md**](docs/RAPPORT-construction-player.md) — comment ces règles sont devenues un player et un algorithme ;
+- 🔤 [**docs/GLOSSAIRE.md**](docs/GLOSSAIRE.md) — pour tout décoder.
 
-Le résumé en 12 règles d'or à appliquer à la main :
+Le résumé : **12 règles d'or** à appliquer à la main.
 
-1. **Un break, c'est une seule image**, qui joue d'un trait, sans la hacher ; un long break garde sa loop longtemps.
-2. **Un drop, plusieurs images** : 1 à 3 écrans (jamais plus de 3), le nombre d'écrans change par phrases de 8 mesures ; après 16 mesures de drop on ne reste plus sur un seul écran.
-3. **Une loop dominante par séquence** : elle joue des plans longs (≈ 3,5 mesures sur 4) ; les autres tournent autour en plans courts. Sans ça : « juste un catalogue de loops mises bout à bout ».
-4. **Des allers-retours** : fais revenir 1 ou 2 loops déjà passées dans la séquence pour raconter quelque chose.
-5. **Le tempo décide de la vitesse des images** : sous 100 BPM, que des loops lentes ; jusqu'à 125, pas de plans trop courts ; au-dessus, tout est permis.
-6. **Un thème par écran** : jamais la même image deux fois ; et alterne régulièrement (≈ toutes les 3 min) entre « changer de thème » et « garder au moins un tag en commun ».
-7. **Passe d'une loop à une voisine** : dans une collection classée par chapitres, on tire dans les ±10 loops proches, et 1 fois sur 5 on saute ailleurs pour avancer.
-8. **Jamais une loop déjà vue** tant qu'il en reste d'autres ; pas plus de ≈ 3 loops neuves par minute ; un même film ne prend pas plus de ≈ 3 loops par demi-heure.
-9. **Suspension dès que le kick manque** en plein drop (même 2 temps) ; **hyper** seulement quand le son est « plein » (beaucoup de notes ou de drums), 4 mesures puis long repos ; jamais d'hyper dans un break ni sous 100 BPM.
-10. **Racontez en 4 chapitres** : humain → figuratif → texture → abstrait, puis **retour d'un coup aux visages** après 16 mesures ; jamais plus de 32 mesures sans visage.
-11. **Respire** : 1 image sur 4 environ reste plusieurs coups en place pour casser l'alternance trop binaire. À 3 écrans, une image **par mesure**, pas par coup.
-12. **Pas de son = noir** (après 4 s), en fondu, avec le nom du projet — pas une coupure.
+| # | Règle | Pourquoi ça marche |
+|---|---|---|
+| 1 | **Un break, c'est une seule image**, qui joue longtemps et sans être hachée. | La pause sonore appelle une pause visuelle : on laisse respirer. |
+| 2 | **Un drop, plusieurs images** : 1 à 3 écrans, jamais plus de 3. Après 16 mesures de drop, on ne reste plus sur un seul écran. | Le drop est le moment de l'énergie. |
+| 3 | **Une loop dominante par séquence** : elle joue des plans longs (≈ 3,5 mesures sur 4) ; les autres tournent autour en plans courts. | Sans personnage principal, ce n'est qu'un catalogue d'images. |
+| 4 | **Des allers-retours** : refais passer 1 ou 2 loops déjà vues dans la séquence. | Les retours créent un fil narratif. |
+| 5 | **Le tempo décide de la vitesse des images** : sous 100 BPM, que des loops lentes ; jusqu'à 125, pas de plans très courts ; au-dessus, tout est permis. | Des images trop rapides sur un morceau lent se « battent » avec la musique. |
+| 6 | **Un thème par écran**, et alterne (≈ toutes les 3 min) entre « changer de thème » et « garder au moins un tag en commun ». | Jamais la même image deux fois ; un lien visible d'une image à l'autre. |
+| 7 | **Passe d'une loop à sa voisine** (±10 loops dans ta collection classée) ; 1 fois sur 5, saute ailleurs. | On reste cohérent sans tourner en rond. |
+| 8 | **Ne reprends pas une loop vue** tant qu'il en reste ; ≈ 3 loops neuves par minute au plus ; un même film ne prend pas plus de ≈ 3 loops par demi-heure. | Un catalogue brûlé en 45 min n'a plus rien à offrir. |
+| 9 | **Suspension dès que le kick manque** en plein drop (même 2 temps) ; **hyper** seulement quand le son est « plein », 4 mesures puis long repos ; jamais d'hyper dans un break ni sous 100 BPM. | Un effet fort doit rester court et rare. |
+| 10 | **Raconte en 4 chapitres** : humain → figuratif → texture → abstrait, puis retour **d'un coup** aux visages après 16 mesures ; jamais plus de 32 mesures sans visage. | Les visages accrochent l'œil, l'abstrait le fait voyager. |
+| 11 | **Respire** : 1 image sur 4 environ reste plusieurs coups en place. À 3 écrans, une image **par mesure**, pas par coup. | Casse l'alternance « métronome ». |
+| 12 | **Pas de son = noir** (après 4 s), en fondu, avec le nom du projet. | Mieux vaut un noir assumé qu'une image sans raison. |
 
-## 3. Parcours d'apprentissage
+## 4. C'est quoi le vibe coding, et comment lire une consigne ?
+
+**Vibe coding** = construire un programme en **décrivant ce qu'on veut avec ses mots** à une IA, sans écrire le code soi-même. On parle, on regarde, on corrige. Le VJ qui a bâti After TV l'a fait comme ça : ses règles sont des **phrases dites à l'oral**, que l'IA a transformées en code.
+
+Chaque règle suit presque toujours le même chemin :
+
+```
+ 1. Ce que le VJ ressent ou veut         ("ça change trop vite")
+ 2. Un numéro de codex                    (V68)           ← la décision est gardée
+ 3. La règle en clair, avec un chiffre   ("une loop dominante, 3,5 mesures sur 4")
+ 4. Une constante réglable dans le code  (DOMINANTE_BLOC_MESURES = 4)
+ 5. Une mesure sur un vrai set           (la preuve que le chiffre est bon)
+```
+
+Un exemple, **V68 — « les images changent trop vite »** : le VJ constate qu'on n'a pas le temps de raconter quelque chose. La règle devient : *la première loop est la dominante, elle joue des plans longs ; les autres passent autour en plans courts.* Dans le code : un bloc de 4 mesures, la dominante en prend 3,5, un satellite 2 temps.
+
+👉 Le [glossaire](docs/GLOSSAIRE.md#7-lire-une-règle-ligne-par-ligne) décortique 3 règles de cette façon, et explique [comment écrire ton propre prompt de VJ](docs/GLOSSAIRE.md#8-écrire-ton-propre-prompt-de-vj) : *ce que je vois → ce que je veux → un chiffre → les exceptions → comment vérifier*.
+
+## 5. Parcours d'apprentissage
 
 Un exercice par niveau, chacun s'appuie sur une partie des règles :
 
 | Niveau | Exercice | Règles | Filtre du téléchargeur utile |
 |---|---|---|---|
-| 1. Alterner | Deux loops qui alternent sur les temps (opacité 1/0), avec un morceau house à 126 BPM | 11 | `--mood house -q sd` |
-| 2. Raconter | Une dominante + 2 satellites sur 8 mesures, avec un aller-retour | 3, 4 | `--theme films` |
-| 3. Break / drop | Sur un morceau avec break : une image en break, 2-3 écrans au drop | 1, 2 | `--exclude-mask --exclude-oneshot` |
-| 4. Lier les images | Choisir chaque loop suivante avec ≥ 1 tag en commun (ouvre `catalogue.csv`) | 6, 7 | — |
-| 5. Tempo | Refaire l'exercice 3 à 90 BPM puis à 135 BPM en changeant de vivier | 5, 9 | colonne `vitesse` du CSV |
-| 6. Chapitres | Construire une montée qui dérive vers l'abstrait, puis retour aux visages | 10 | colonne `theme` du CSV |
-| 7. Ne rien répéter | Un set de 20 minutes sans loop revue et avec le quota de neuves | 8 | tout le catalogue |
-| 8. Automatiser | Coder ses propres règles (voir les constantes dans les rapports) | toutes | — |
+| 1. Alterner | Deux loops qui alternent sur les temps (opacité 100 % / 0 %), sur un morceau house à 126 BPM. | 11 | `--mood house -q sd` |
+| 2. Raconter | Une dominante + 2 satellites sur 8 mesures, avec un aller-retour. | 3, 4 | `--theme films` |
+| 3. Break / drop | Sur un morceau avec break : une image en break, 2-3 écrans au drop. | 1, 2 | `--exclude-mask --exclude-oneshot` |
+| 4. Lier les images | Choisis chaque loop suivante avec ≥ 1 tag en commun (ouvre `catalogue.csv`). | 6, 7 | — |
+| 5. Tempo | Refais l'exercice 3 à 90 BPM puis à 135 BPM en changeant de sélection. | 5, 9 | colonne `vitesse` du CSV |
+| 6. Chapitres | Construis une montée qui dérive vers l'abstrait, puis retour aux visages. | 10 | colonne `theme` du CSV |
+| 7. Ne rien répéter | Un set de 20 min sans loop revue, avec le quota de neuves. | 8 | tout le catalogue |
+| 8. Automatiser | Code tes propres règles (les constantes sont listées dans les rapports). | toutes | — |
 
 ---
 
-## 4. Mode d'emploi : télécharger les vidéos
+## 6. Mode d'emploi : télécharger les vidéos
 
 ### Option A — le `.exe` (Windows, rien à installer)
 
-1. Ouvrir la page [Releases](../../releases/latest) et télécharger **`super-vj-downloader.exe`**.
-2. Le placer dans un dossier avec beaucoup de place libre (≈ 12 Go en meilleure qualité).
-3. **Double-cliquer** : l'outil pose 3 questions (qualité, style, liste ou téléchargement) puis télécharge dans un dossier `downloads/` à côté du `.exe`.
+1. Va sur la page [**Releases**](../../releases/latest) et télécharge **`super-vj-downloader.exe`**.
+2. Mets-le dans un dossier avec beaucoup de place libre (≈ 12 Go en meilleure qualité).
+3. **Double-clique** : l'outil te pose 3 questions (qualité, style, liste ou téléchargement) puis télécharge dans un dossier `downloads/` à côté du `.exe`.
 
-> Windows SmartScreen / l'antivirus peut avertir pour un `.exe` non signé : « Informations complémentaires » → « Exécuter quand même ». Le code source est dans ce dépôt ([after_tv_scraper.py](after_tv_scraper.py)), vous pouvez aussi le lancer avec Python (option B).
+> ⚠️ Windows SmartScreen ou ton antivirus peut avertir pour un `.exe` non signé : « Informations complémentaires » → « Exécuter quand même ». Le code est lisible dans [after_tv_scraper.py](after_tv_scraper.py), tu peux aussi le lancer avec Python (option B).
 
-Le `.exe` accepte aussi les commandes de l'option C, depuis PowerShell / Terminal :
+Le `.exe` accepte aussi les commandes de l'option C, depuis PowerShell :
 
 ```powershell
 .\super-vj-downloader.exe --dry-run
+```
+```powershell
 .\super-vj-downloader.exe -q both --mood house
 ```
 
-### Option B — avec Python (3.8+, aucune dépendance à installer)
+### Option B — avec Python (3.8+, aucune dépendance)
 
 ```bash
-git clone https://github.com/<votre-compte>/super-vj-maker.git
+git clone https://github.com/<ton-compte>/super-vj-maker.git
 cd super-vj-maker
 python after_tv_scraper.py
 ```
 
-Sans argument, le mode guidé s'ouvre comme avec le `.exe`.
+Sans argument, le mode guidé s'ouvre, comme avec le `.exe`.
 
 ### Option C — les commandes
 
@@ -98,7 +145,7 @@ Tester sans rien télécharger (liste + volume) :
 python after_tv_scraper.py --dry-run
 ```
 
-Tout télécharger, meilleure qualité (HD si elle existe, sinon SD) :
+Tout télécharger, en meilleure qualité (HD si elle existe, sinon SD) :
 
 ```bash
 python after_tv_scraper.py
@@ -110,19 +157,19 @@ SD **et** HD :
 python after_tv_scraper.py -q both
 ```
 
-Seulement la SD (le plus léger, ≈ 9,5 Go) :
+SD seulement (le plus léger) :
 
 ```bash
 python after_tv_scraper.py -q sd
 ```
 
-Seulement les loops de style techno (même filtre que le bouton du site) :
+Seulement le style techno (même filtre que le bouton du site) :
 
 ```bash
 python after_tv_scraper.py --mood techno
 ```
 
-Un thème précis, sans les masques ni les one-shots, 8 téléchargements en parallèle, dans un autre dossier :
+Un thème précis, sans masques ni one-shots, 8 téléchargements en parallèle, dans un autre dossier :
 
 ```bash
 python after_tv_scraper.py --theme films --exclude-mask --exclude-oneshot -w 8 -o D:\VJ\loops
@@ -167,15 +214,15 @@ downloads/
 └── erreurs.txt              seulement s'il y a eu des échecs
 ```
 
-- Un téléchargement interrompu **reprend** là où il s'est arrêté (fichiers `.part`) : relancez la même commande.
-- Les vidéos téléchargées sont **identiques octet pour octet** à celles du site.
+- Un téléchargement interrompu **reprend** là où il s'est arrêté (fichiers `.part`) : relance la même commande.
+- Les vidéos sont **identiques octet pour octet** à celles du site.
 - Le dossier `downloads/` est ignoré par git (`.gitignore`) : il ne part jamais dans le dépôt.
 
-### Comment ça marche (et pourquoi un seul passage suffit)
+### Pourquoi un seul passage suffit
 
-Le site charge `config.json` → `manifest.json` (la liste de **toutes** les loops) puis lit les `.mp4` dans un bucket public. Les boutons House / Techno / Tout du site ne sont qu'un filtre dans le navigateur : le manifeste contient tout, l'outil le lit directement et applique le même filtre si vous le demandez. Pour de nouvelles loops, relancer l'outil suffit.
+Le site charge un fichier `manifest.json` qui liste **toutes** les loops, puis lit les `.mp4` dans un bucket public. Les boutons House / Techno / Tout du site ne font que filtrer dans ton navigateur : le manifeste contient tout. L'outil le lit directement. Pour de nouvelles loops, relance simplement l'outil.
 
-### Construire le `.exe` soi-même
+### Construire le `.exe` toi-même
 
 ```bash
 pip install pyinstaller
@@ -188,19 +235,19 @@ Le fichier est créé dans `dist/`.
 
 | Problème | Solution |
 |---|---|
-| Fenêtre qui se ferme tout de suite | lancer depuis PowerShell pour lire le message, ou double-cliquer (le mode guidé garde la fenêtre ouverte) |
-| `✗ … 404` | une loop a été retirée du site : sans gravité, le reste continue |
-| Téléchargement trop lent | augmenter `-w 8`, ou passer en `-q sd` |
-| Manque de place | `--dry-run` donne le volume SD avant de commencer ; SD seule ≈ 9,5 Go, meilleure qualité ≈ 12 Go |
+| La fenêtre se ferme tout de suite | Lance depuis PowerShell pour lire le message, ou double-clique (le mode guidé garde la fenêtre ouverte). |
+| `✗ … 404` | Une loop a été retirée du site : sans gravité, le reste continue. |
+| Téléchargement trop lent | Monte `-w 8`, ou passe en `-q sd`. |
+| Manque de place | `--dry-run` donne le volume SD avant de commencer ; SD seule ≈ 9,5 Go, meilleure qualité ≈ 12 Go. |
 
 ---
 
 ## Droits et usage
 
 - Les **loops appartiennent à leurs auteurs** (VJ Rien / enjoy.dot et les ayants droit des images d'origine : extraits de films, clips, etc.). L'outil ne fait qu'accéder à ce que le site met publiquement à disposition du navigateur.
-- Ce dépôt ne contient **aucune vidéo**. Téléchargez-les pour **votre étude personnelle** ; ne les redistribuez pas, ne les republiez pas, ne les utilisez pas en public sans l'accord de leurs auteurs.
-- Les règles décrites dans les rapports sont tirées du code public d'After TV et des consignes que son auteur y a laissées en commentaires ; elles sont citées avec leur source. Ce projet n'est pas affilié à After TV.
-- Soyez raisonnables avec le serveur : 4 téléchargements en parallèle par défaut, pas de `--watch` à une cadence très courte.
+- Ce dépôt ne contient **aucune vidéo**. Télécharge-les pour **ton étude personnelle** ; ne les redistribue pas, ne les republie pas, ne les utilise pas en public sans l'accord de leurs auteurs.
+- Les règles décrites dans les rapports sont tirées du code public d'After TV et des commentaires que son auteur y a laissés. Ce projet n'est pas affilié à After TV.
+- Sois raisonnable avec le serveur : 4 téléchargements en parallèle par défaut, pas de `--watch` à une cadence très courte.
 
 ## Crédits
 
