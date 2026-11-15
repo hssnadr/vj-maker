@@ -1,0 +1,13 @@
+# Vidéos téléchargées (plusieurs Go) : jamais dans le dépôt
+downloads/
+download*/
+*.part
+download.log
+
+# Build du .exe (il est publié dans les Releases, pas commité)
+build/
+dist/
+*.spec
+.venv/
+__pycache__/
+*.pyc
